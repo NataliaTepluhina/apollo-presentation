@@ -1,0 +1,8 @@
+mutation AddToFavorites($character: Character!) {
+  addToFavorites(character: $character) @client {
+    id
+    name
+    image
+    location
+  }
+}

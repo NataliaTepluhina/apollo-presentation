@@ -1,0 +1,12 @@
+query Characters {
+  characters {
+    results {
+      id
+      name
+      location {
+        name
+      }
+      image
+    }
+  }
+}

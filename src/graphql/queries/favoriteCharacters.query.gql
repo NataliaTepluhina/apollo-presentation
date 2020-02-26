@@ -1,0 +1,8 @@
+query FavoriteCharacters {
+  favoriteCharacters @client {
+    id
+    name
+    location
+    image
+  }
+}
