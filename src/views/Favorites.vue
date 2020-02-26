@@ -1,6 +1,6 @@
 <template>
   <b-row class="py-3">
-    <h1 v-if="!favoriteCharacters.length">
+    <h1 v-if="!(favoriteCharacters && favoriteCharacters.length)">
       You don't have favorite characters
     </h1>
     <template v-else>
@@ -35,16 +35,7 @@ import { useQuery, useResult, useMutation } from '@vue/apollo-composable';
 import favoriteCharactersQuery from '../graphql/queries/favoriteCharacters.query.gql';
 import removeFromFavoritesMutation from '../graphql/queries/removeFromFavorites.mutation.gql';
 export default {
-  setup() {
-    const { result: favoritesResult } = useQuery(favoriteCharactersQuery);
-    const favoriteCharacters = useResult(favoritesResult);
-
-    const { mutate: removeFromFavorites } = useMutation(
-      removeFromFavoritesMutation
-    );
-
-    return { favoriteCharacters, removeFromFavorites };
-  }
+  setup() {}
 };
 </script>
 
