@@ -1,10 +1,8 @@
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import axios from 'axios';
 import favoriteCharactersQuery from './queries/favoriteCharacters.query.gql';
-
-axios.defaults.baseURL = 'https://rickandmortyapi.com/api/';
+import charactersMock from './mock';
 
 const httpLink = createHttpLink({
   uri: 'https://rickandmortyapi.com/graphql'
@@ -15,15 +13,7 @@ const cache = new InMemoryCache();
 const resolvers = {
   Query: {
     characters() {
-      return axios.get('/character').then(res => ({
-        results: res.data.results.map(char => ({
-          __typename: 'Character',
-          id: char.id,
-          name: char.name,
-          location: char.location,
-          image: char.image
-        }))
-      }));
+      return charactersMock;
     }
   },
   Mutation: {
