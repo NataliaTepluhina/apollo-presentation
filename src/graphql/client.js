@@ -2,6 +2,7 @@ import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import favoriteCharactersQuery from './queries/favoriteCharacters.query.gql';
+import charactersMock from './mock';
 
 const httpLink = createHttpLink({
   uri: 'https://rickandmortyapi.com/graphql'
