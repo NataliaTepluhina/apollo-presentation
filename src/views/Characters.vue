@@ -37,7 +37,11 @@ import charactersQuery from '../graphql/queries/characters.query.gql';
 import favoriteCharactersQuery from '../graphql/queries/favoriteCharacters.query.gql';
 import addToFavoritesMutation from '../graphql/queries/addToFavorites.mutation.gql';
 export default {
-  setup() {}
+  setup() {
+    const isInFavorites = () => {}; // Yes, this is a placeholder ¯\_(ツ)_/¯
+
+    return { isInFavorites };
+  }
 };
 </script>
 
