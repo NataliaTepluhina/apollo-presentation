@@ -1,6 +1,6 @@
 <template>
   <b-row class="py-3">
-    <template v-if="characters">
+    <template v-if="characters || loading">
       <div v-if="loading" class="spinner w-100">
         <b-spinner label="Spinning"></b-spinner>
       </div>

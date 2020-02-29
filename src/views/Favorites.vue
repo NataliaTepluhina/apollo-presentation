@@ -35,7 +35,12 @@ import { useQuery, useResult, useMutation } from '@vue/apollo-composable';
 import favoriteCharactersQuery from '../graphql/queries/favoriteCharacters.query.gql';
 import removeFromFavoritesMutation from '../graphql/queries/removeFromFavorites.mutation.gql';
 export default {
-  setup() {}
+  setup() {
+    const { result: favResult } = useQuery(favoriteCharactersQuery);
+    const favoriteCharacters = useResult(favResult);
+
+    return { favoriteCharacters };
+  }
 };
 </script>
 
