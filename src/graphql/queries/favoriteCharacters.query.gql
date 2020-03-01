@@ -2,7 +2,9 @@ query FavoriteCharacters {
   favoriteCharacters @client {
     id
     name
-    location
+    location {
+      name
+    }
     image
   }
 }
