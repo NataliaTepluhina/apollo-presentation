@@ -1,7 +1,10 @@
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import axios from 'axios';
 import favoriteCharactersQuery from './queries/favoriteCharacters.query.gql';
+
+axios.defaults.baseURL = 'https://rickandmortyapi.com/api';
 
 const httpLink = createHttpLink({
   uri: 'https://rickandmortyapi.com/graphql'
