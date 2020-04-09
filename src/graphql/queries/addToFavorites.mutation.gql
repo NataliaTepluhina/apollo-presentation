@@ -1,8 +1,10 @@
-mutation AddToFavorites($character: Character!) {
+mutation AddToFavorites($character: CharacterInput!) {
   addToFavorites(character: $character) @client {
     id
     name
     image
-    location
+    location {
+      name
+    }
   }
 }
