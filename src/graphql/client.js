@@ -15,8 +15,6 @@ const cache = new InMemoryCache();
 
 const resolvers = {};
 
-cache.writeData({ data: { favoriteCharacters: [] } });
-
 export const apolloClient = new ApolloClient({
   link: httpLink,
   cache,
