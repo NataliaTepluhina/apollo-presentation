@@ -38,10 +38,22 @@ import favoriteCharactersQuery from '../graphql/queries/favoriteCharacters.query
 import addToFavoritesMutation from '../graphql/queries/addToFavorites.mutation.gql';
 export default {
   setup() {
-    const isInFavorites = () => {}; // Yes, this is a placeholder ¯\_(ツ)_/¯
+    const { result: charResult, loading } = useQuery(charactersQuery);
+    const characters = useResult(
+      charResult,
+      null,
+      (data) => data.characters.results
+    );
 
-    return { isInFavorites };
-  }
+    const { result: favResult } = useQuery(favoriteCharactersQuery);
+
+    const isInFavorites = (char) =>
+      favResult.value.favoriteCharacters.some((fav) => fav.id === char.id);
+
+    const { mutate: addToFavorites } = useMutation(addToFavoritesMutation);
+
+    return { isInFavorites, loading, characters, addToFavorites };
+  },
 };
 </script>
 

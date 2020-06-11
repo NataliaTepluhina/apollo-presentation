@@ -39,8 +39,12 @@ export default {
     const { result: favResult } = useQuery(favoriteCharactersQuery);
     const favoriteCharacters = useResult(favResult);
 
-    return { favoriteCharacters };
-  }
+    const { mutate: removeFromFavorites } = useMutation(
+      removeFromFavoritesMutation
+    );
+
+    return { favoriteCharacters, removeFromFavorites };
+  },
 };
 </script>
 
