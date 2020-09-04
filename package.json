@@ -29,7 +29,7 @@
     "@vue/cli-service": "^4.1.0",
     "bootstrap": "^4.3.1",
     "mutationobserver-shim": "^0.3.3",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "popper.js": "^1.15.0",
     "portal-vue": "^2.1.4",
     "sass-loader": "^7.1.0",
